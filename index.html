@@ -427,21 +427,27 @@ html{scroll-behavior:smooth}
         <p>Kein Callcenter. Keine automatisierten Antworten. Und zumindest an dieser Stelle keine KI. Ausgeredet wird persönlich. Natürlich mit Handschlagqualität.</p>
         <div class="k-row"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18.9 19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 5.47 5.47l.97-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Florian: +43 680 5580033</div>
         <div class="k-row"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18.9 19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 5.47 5.47l.97-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Fabian: +43 676 6611832</div>
-        <div class="k-row"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>landai@sb.at</div>
+        <div class="k-row"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>office@landai.at</div>
         <div class="k-row"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>LandAI OG &middot; FN beim LG St. Pölten</div>
         <div class="k-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Kostenlos · Unverbindlich · Antwort in 24 h</div>
       </div>
-      <form class="k-form" onsubmit="formSend(event)">
+      <form class="k-form" id="kontaktForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST" onsubmit="formSend(event)">
         <div class="f-row">
-          <div class="fg"><label>Name</label><input type="text" placeholder="Franz Huber" required></div>
-          <div class="fg"><label>Telefon</label><input type="tel" placeholder="+43 664 ..."></div>
+          <div class="fg"><label>Name</label><input type="text" name="name" placeholder="Franz Huber" required></div>
+          <div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="+43 664 ..."></div>
         </div>
-        <div class="fg"><label>E-Mail</label><input type="email" placeholder="landai@sb.at" required></div>
+        <div class="fg"><label>E-Mail</label><input type="email" name="email" placeholder="max@beispiel.at" required></div>
         <div class="f-row">
-          <div class="fg"><label>Bereich</label><select><option value="">Bitte wählen</option><option>Landwirtschaft</option><option>Forstwirtschaft</option><option>Gemeinde / öffentl. Einrichtung</option><option>Gastronomie &amp; Tourismus</option><option>Direktvermarktung</option><option>Handwerk &amp; Gewerbe</option><option>Verein / Organisation</option><option>Sonstiges</option></select></div>
-          <div class="fg"><label>Interesse an</label><select><option value="">Bitte wählen</option><option>Web-App Vorlage</option><option>IoT-Sensorik &amp; Monitoring</option><option>KI-Beratung &amp; Training</option><option>Individuelle Entwicklung</option><option>Allgemeine Beratung</option></select></div>
+          <div class="fg"><label>Bereich</label><select name="bereich"><option value="">Bitte wählen</option><option>Landwirtschaft</option><option>Forstwirtschaft</option><option>Gemeinde / öffentl. Einrichtung</option><option>Gastronomie &amp; Tourismus</option><option>Direktvermarktung</option><option>Handwerk &amp; Gewerbe</option><option>Verein / Organisation</option><option>Sonstiges</option></select></div>
+          <div class="fg"><label>Interesse an</label><select name="interesse"><option value="">Bitte wählen</option><option>Web-App Vorlage</option><option>IoT-Sensorik &amp; Monitoring</option><option>KI-Beratung &amp; Training</option><option>Individuelle Entwicklung</option><option>Allgemeine Beratung</option></select></div>
         </div>
-        <div class="fg"><label>Eure Nachricht</label><textarea placeholder="Beschreibt kurz euer Anliegen. Wir melden uns persönlich."></textarea></div>
+        <div class="fg"><label>Eure Nachricht</label><textarea name="nachricht" placeholder="Beschreibt kurz euer Anliegen. Wir melden uns persönlich."></textarea></div>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="Neue Anfrage über landai.at">
+        <label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.78rem;color:var(--muted);line-height:1.6;cursor:pointer;margin-top:.3rem">
+          <input type="checkbox" required style="margin-top:.25rem;accent-color:var(--accent);flex-shrink:0">
+          <span>Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Details in der <a href="datenschutz.html" target="_blank" style="color:var(--accent)">Datenschutzerkl&#228;rung</a>.</span>
+        </label>
         <button type="submit" class="f-submit">Nachricht absenden</button>
       </form>
     </div>
@@ -464,7 +470,11 @@ html{scroll-behavior:smooth}
         </div>
         <div style="margin-top:1.5rem;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:.85rem">Rechtsform &amp; Register</div>
         <div style="font-size:.9rem;line-height:2;color:var(--ink2)">
-          Offene Gesellschaft (OG)<br>Firmenbuch: Landesgericht St. Pölten<br>Gültig ab: 21. Mai 2026
+          Offene Gesellschaft (OG)<br>
+          Firmenbuchnummer: FN&nbsp;679989i<br>
+          Firmenbuchgericht: Landesgericht St. P&#246;lten<br>
+          UID-Nummer: ATU83486513<br>
+          Eingetragen seit: 21. Mai 2026
         </div>
       </div>
       <div>
@@ -472,10 +482,17 @@ html{scroll-behavior:smooth}
         <div style="font-size:.9rem;line-height:2;color:var(--ink2)">
           <strong>Fabian Butzenlechner, BSc.</strong><br>Tel: <a href="tel:+436766611832" style="color:var(--accent);text-decoration:none">+43 676 6611832</a><br><br>
           <strong>DDI Florian Schmeisser</strong><br>Tel: <a href="tel:+436805580033" style="color:var(--accent);text-decoration:none">+43 680 5580033</a><br><br>
-          E-Mail: <a href="mailto:landai@sb.at" style="color:var(--accent);text-decoration:none">landai@sb.at</a>
+          E-Mail: <a href="mailto:office@landai.at" style="color:var(--accent);text-decoration:none">office@landai.at</a>
         </div>
         <div style="margin-top:1.5rem;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:.85rem">Unternehmensgegenstand</div>
         <div style="font-size:.9rem;line-height:1.7;color:var(--muted)">Entwicklung, Programmierung und Vermarktung von Softwarelösungen sowie Anwendungen im Bereich künstlicher Intelligenz (KI), insbesondere für den landwirtschaftlichen und ländlichen Raum.</div>
+        <div style="margin-top:1.5rem;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:.85rem">Mitgliedschaft &amp; Aufsicht</div>
+        <div style="font-size:.9rem;line-height:1.9;color:var(--ink2)">
+          Mitglied der Wirtschaftskammer Nieder&#246;sterreich<br>
+          Fachgruppe UBIT (Unternehmensberatung, Buchhaltung und IT)<br>
+          Gewerbebeh&#246;rde: Bezirkshauptmannschaft Melk<br>
+          Anwendbare Rechtsvorschriften: Gewerbeordnung (<a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">ris.bka.gv.at</a>)
+        </div>
       </div>
     </div>
     <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);max-width:900px">
@@ -493,8 +510,8 @@ html{scroll-behavior:smooth}
         <p>Digitale Lösungen für den ländlichen Raum Österreichs.</p>
       </div>
       <div class="f-links"><h4>Navigation</h4><a href="#leistungen">Leistungen</a><a href="#webapps">Apps</a><a href="#ueber-uns">Über uns</a><a href="#preise">Preise</a><a href="#kontakt">Kontakt</a></div>
-      <div class="f-links"><h4>Rechtliches</h4><a href="#impressum">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
-      <div class="f-links"><h4>Kontakt</h4><a href="mailto:landai@sb.at">landai@sb.at</a><a href="tel:+436766611832">Fabian: +43 676 6611832</a><a href="tel:+436805580033">Florian: +43 680 5580033</a><a href="#impressum">Gr. Maierhof 11, 3242 Texingtal</a></div>
+      <div class="f-links"><h4>Rechtliches</h4><a href="#impressum">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+      <div class="f-links"><h4>Kontakt</h4><a href="mailto:office@landai.at">office@landai.at</a><a href="tel:+436766611832">Fabian: +43 676 6611832</a><a href="tel:+436805580033">Florian: +43 680 5580033</a><a href="#impressum">Gr. Maierhof 11, 3242 Texingtal</a></div>
     </div>
     <div class="f-bottom"><div class="f-copy">&#169; 2026 LandAI OG &middot; Gr. Maierhof 11, 3242 Texingtal &middot; Firmenbuch: LG St. P&#246;lten</div><div class="f-copy">einfach &middot; l&#228;ndlich &middot; digital</div></div>
   </div>
@@ -563,7 +580,42 @@ function openApp(id){
 
 function goKontakt(){closeModal();setTimeout(()=>document.getElementById("kontakt").scrollIntoView({behavior:"smooth"}),200)}
 function closeModal(e){if(e&&e.target!==document.getElementById("modalOverlay"))return;document.getElementById("modalOverlay").classList.remove("open");document.body.style.overflow=""}
-function formSend(e){e.preventDefault();alert("Vielen Dank! Wir melden uns innerhalb von 24 Stunden persönlich bei euch.")}
+async function formSend(e){
+  e.preventDefault();
+  const form=e.target, btn=form.querySelector('.f-submit'), orig=btn.textContent;
+  // Solange kein Formspree-Endpoint konfiguriert ist: kein Blind-Versand, sondern Hinweis + mailto-Fallback.
+  if(form.action.indexOf("FORMSPREE_ID")>-1){
+    const d=new FormData(form);
+    const betreff=encodeURIComponent("Anfrage über landai.at");
+    const body=encodeURIComponent(
+      "Name: "+(d.get("name")||"")+"\n"+
+      "Telefon: "+(d.get("telefon")||"")+"\n"+
+      "E-Mail: "+(d.get("email")||"")+"\n"+
+      "Bereich: "+(d.get("bereich")||"")+"\n"+
+      "Interesse: "+(d.get("interesse")||"")+"\n\n"+
+      (d.get("nachricht")||""));
+    let hint=form.querySelector('.form-ok');
+    if(!hint){hint=document.createElement('div');hint.className='form-ok';hint.style.cssText='margin-top:.75rem;font-size:.85rem;color:var(--ink2);line-height:1.6';form.appendChild(hint);}
+    hint.innerHTML='Schreibt uns bitte direkt an <a href="mailto:office@landai.at?subject='+betreff+'&body='+body+'" style="color:var(--accent);font-weight:600">office@landai.at</a> oder ruft uns an. Wir melden uns umgehend.';
+    return;
+  }
+  btn.disabled=true; btn.textContent="Wird gesendet…";
+  try{
+    const res=await fetch(form.action,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});
+    if(res.ok){
+      form.reset();
+      btn.textContent="✓ Nachricht gesendet";
+      btn.style.background="#2E7D32";
+      let ok=form.querySelector('.form-ok');
+      if(!ok){ok=document.createElement('div');ok.className='form-ok';ok.style.cssText='margin-top:.75rem;font-size:.85rem;color:#2E7D32;font-weight:600';form.appendChild(ok);}
+      ok.textContent="Vielen Dank! Wir melden uns innerhalb von 24 Stunden persönlich bei euch.";
+      setTimeout(()=>{btn.disabled=false;btn.textContent=orig;btn.style.background="";},6000);
+    }else{throw new Error();}
+  }catch(err){
+    btn.disabled=false; btn.textContent=orig;
+    alert("Senden fehlgeschlagen. Bitte versucht es erneut oder schreibt uns direkt an office@landai.at");
+  }
+}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 renderApps();
 </script>
